@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "PhishLens AI - Anti-Phishing & Visual Spoofing Sentinel",
+  "version": "1.0.0",
+  "description": "Real-time privacy-preserving anti-phishing, visual brand spoofing detection, and embedded conversational AI security assistant.",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "storage",
+    "offscreen",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "public/icons/icon-16.png",
+      "48": "public/icons/icon-48.png",
+      "128": "public/icons/icon-128.png"
+    }
+  },
+  "icons": {
+    "16": "public/icons/icon-16.png",
+    "48": "public/icons/icon-48.png",
+    "128": "public/icons/icon-128.png"
+  },
+  "background": {
+    "service_worker": "dist/background/serviceWorker.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["dist/content/contentScript.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "public/icons/*",
+        "dist/offscreen/*",
+        "offscreen.html"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

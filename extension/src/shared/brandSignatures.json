@@ -1,0 +1,146 @@
+[
+  {
+    "brandName": "Google",
+    "canonicalDomains": ["google.com", "accounts.google.com", "gmail.com", "google.co.uk", "google.ca"],
+    "category": "IDENTITY",
+    "phashSignature": "a1b2c3d4e5f60718"
+  },
+  {
+    "brandName": "PayPal",
+    "canonicalDomains": ["paypal.com", "paypal-prepaid.com", "paypalobjects.com"],
+    "category": "FINANCIAL",
+    "phashSignature": "8f7e6d5c4b3a2109"
+  },
+  {
+    "brandName": "Microsoft",
+    "canonicalDomains": ["microsoft.com", "login.microsoftonline.com", "live.com", "office.com", "outlook.com"],
+    "category": "IDENTITY",
+    "phashSignature": "1122334455667788"
+  },
+  {
+    "brandName": "Apple",
+    "canonicalDomains": ["apple.com", "icloud.com", "appleid.apple.com"],
+    "category": "IDENTITY",
+    "phashSignature": "99aabbccddeeff00"
+  },
+  {
+    "brandName": "Chase",
+    "canonicalDomains": ["chase.com", "secure.chase.com"],
+    "category": "FINANCIAL",
+    "phashSignature": "1234567890abcdef"
+  },
+  {
+    "brandName": "Amazon",
+    "canonicalDomains": ["amazon.com", "sellercentral.amazon.com", "aws.amazon.com", "amazon.co.uk", "amazon.de"],
+    "category": "COMMERCE",
+    "phashSignature": "fedcba0987654321"
+  },
+  {
+    "brandName": "Bank of America",
+    "canonicalDomains": ["bankofamerica.com", "bofa.com"],
+    "category": "FINANCIAL",
+    "phashSignature": "445566778899aabb"
+  },
+  {
+    "brandName": "Wells Fargo",
+    "canonicalDomains": ["wellsfargo.com"],
+    "category": "FINANCIAL",
+    "phashSignature": "3344556677889900"
+  },
+  {
+    "brandName": "Meta",
+    "canonicalDomains": ["facebook.com", "instagram.com", "whatsapp.com", "meta.com"],
+    "category": "SOCIAL",
+    "phashSignature": "1029384756afbecd"
+  },
+  {
+    "brandName": "Coinbase",
+    "canonicalDomains": ["coinbase.com", "pro.coinbase.com"],
+    "category": "CRYPTO",
+    "phashSignature": "abcdef0123456789"
+  },
+  {
+    "brandName": "Binance",
+    "canonicalDomains": ["binance.com", "binance.us"],
+    "category": "CRYPTO",
+    "phashSignature": "556677889900aabb"
+  },
+  {
+    "brandName": "Stripe",
+    "canonicalDomains": ["stripe.com", "dashboard.stripe.com"],
+    "category": "FINANCIAL",
+    "phashSignature": "66778899aabbccdd"
+  },
+  {
+    "brandName": "Netflix",
+    "canonicalDomains": ["netflix.com"],
+    "category": "COMMERCE",
+    "phashSignature": "778899aabbccddee"
+  },
+  {
+    "brandName": "Dropbox",
+    "canonicalDomains": ["dropbox.com"],
+    "category": "IDENTITY",
+    "phashSignature": "8899aabbccddeeff"
+  },
+  {
+    "brandName": "LinkedIn",
+    "canonicalDomains": ["linkedin.com"],
+    "category": "SOCIAL",
+    "phashSignature": "0011223344556677"
+  },
+  {
+    "brandName": "Twitter",
+    "canonicalDomains": ["twitter.com", "x.com"],
+    "category": "SOCIAL",
+    "phashSignature": "aabbccddeeff0011"
+  },
+  {
+    "brandName": "Adobe",
+    "canonicalDomains": ["adobe.com", "account.adobe.com"],
+    "category": "COMMERCE",
+    "phashSignature": "bbccddeeff001122"
+  },
+  {
+    "brandName": "eBay",
+    "canonicalDomains": ["ebay.com", "ebay.co.uk"],
+    "category": "COMMERCE",
+    "phashSignature": "ccddeeff00112233"
+  },
+  {
+    "brandName": "DHL",
+    "canonicalDomains": ["dhl.com", "mydhl.express.dhl"],
+    "category": "COMMERCE",
+    "phashSignature": "ddeeff0011223344"
+  },
+  {
+    "brandName": "FedEx",
+    "canonicalDomains": ["fedex.com"],
+    "category": "COMMERCE",
+    "phashSignature": "eeff001122334455"
+  },
+  {
+    "brandName": "MetaMask",
+    "canonicalDomains": ["metamask.io"],
+    "category": "CRYPTO",
+    "phashSignature": "ff00112233445566"
+  },
+  {
+    "brandName": "Okta",
+    "canonicalDomains": ["okta.com"],
+    "category": "IDENTITY",
+    "phashSignature": "1234123412341234"
+  },
+  {
+    "brandName": "Duo Security",
+    "canonicalDomains": ["duo.com"],
+    "category": "IDENTITY",
+    "phashSignature": "5678567856785678"
+  },
+  {
+    "brandName": "Kraken",
+    "canonicalDomains": ["kraken.com"],
+    "category": "CRYPTO",
+    "phashSignature": "90ab90ab90ab90ab"
+  }
+]
