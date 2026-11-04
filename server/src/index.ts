@@ -1,6 +1,8 @@
 import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
+import path from 'path';
+import fs from 'fs';
 import { env } from './config/env';
 import { db } from './db/client';
 import { errorHandler } from './middleware/errorHandler';
@@ -66,6 +68,27 @@ app.use('/api/v1/signatures', brandAnchorsRouter);
 
 // Administrative Intelligence Center
 app.use('/api/v1/admin', adminRouter);
+
+// Serve Central Web Dashboard in Production
+const possibleDashboardPaths = [
+  path.resolve(__dirname, '../../../dashboard/dist'),
+  path.resolve(process.cwd(), 'dashboard/dist'),
+  path.resolve(process.cwd(), '../dashboard/dist'),
+];
+
+for (const p of possibleDashboardPaths) {
+  if (fs.existsSync(p) && fs.existsSync(path.join(p, 'index.html'))) {
+    app.use(express.static(p));
+    app.get('*', (req, res, next) => {
+      if (req.path.startsWith('/api')) {
+        return next();
+      }
+      res.sendFile(path.join(p, 'index.html'));
+    });
+    console.log(`[Server] Serving production dashboard UI from: ${p}`);
+    break;
+  }
+}
 
 // Global Error Handler
 app.use(errorHandler);

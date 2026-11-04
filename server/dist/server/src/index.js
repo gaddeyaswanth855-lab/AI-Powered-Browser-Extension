@@ -8,6 +8,8 @@ exports.startServer = startServer;
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const helmet_1 = __importDefault(require("helmet"));
+const path_1 = __importDefault(require("path"));
+const fs_1 = __importDefault(require("fs"));
 const env_1 = require("./config/env");
 const client_1 = require("./db/client");
 const errorHandler_1 = require("./middleware/errorHandler");
@@ -60,6 +62,25 @@ app.use('/api/v1/assistant', assistant_1.default);
 app.use('/api/v1/signatures', brandAnchors_1.default);
 // Administrative Intelligence Center
 app.use('/api/v1/admin', admin_1.default);
+// Serve Central Web Dashboard in Production
+const possibleDashboardPaths = [
+    path_1.default.resolve(__dirname, '../../../dashboard/dist'),
+    path_1.default.resolve(process.cwd(), 'dashboard/dist'),
+    path_1.default.resolve(process.cwd(), '../dashboard/dist'),
+];
+for (const p of possibleDashboardPaths) {
+    if (fs_1.default.existsSync(p) && fs_1.default.existsSync(path_1.default.join(p, 'index.html'))) {
+        app.use(express_1.default.static(p));
+        app.get('*', (req, res, next) => {
+            if (req.path.startsWith('/api')) {
+                return next();
+            }
+            res.sendFile(path_1.default.join(p, 'index.html'));
+        });
+        console.log(`[Server] Serving production dashboard UI from: ${p}`);
+        break;
+    }
+}
 // Global Error Handler
 app.use(errorHandler_1.errorHandler);
 // Initialize DB and Start Server

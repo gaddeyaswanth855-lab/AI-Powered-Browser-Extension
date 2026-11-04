@@ -3,16 +3,18 @@
   "version": "1.0.0",
   "description": "PhishLens AI — Privacy-Preserving Anti-Phishing Extension & Cloud Intelligence Platform",
   "private": true,
+  "main": "server/dist/server/src/index.js",
   "workspaces": [
     "server",
     "extension",
     "dashboard"
   ],
   "scripts": {
+    "start": "node server/dist/server/src/index.js",
+    "build": "npm --prefix server run build && npm --prefix dashboard run build",
     "server": "npm --prefix server run dev",
     "dashboard": "npm --prefix dashboard run dev",
     "extension:build": "npm --prefix extension run build",
     "test": "node test/suite.js"
   }
 }
-
